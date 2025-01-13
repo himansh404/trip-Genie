@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+
+.btn-glow {
+  position: relative;
+  padding: 0.5rem 2rem;
+  border: 4px solid transparent;
+  border-radius: 9999px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f56551;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.3s ease;
+  animation: glowAnimation 2s linear infinite, rotateGlow 2s linear infinite;
+}
+
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 101, 81, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 101, 81, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 101, 81, 0.8);
+  }
+}
+
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(245, 101, 81, 1), 0 0 50px rgba(245, 101, 81, 1);
+}
+
